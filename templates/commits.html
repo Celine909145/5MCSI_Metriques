@@ -76,7 +76,7 @@
                     };
 
                     // Remplacement par LineChart pour un graphique en courbe
-                    var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+                    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
                     chart.draw(dataTable, options);
                 });
             })
