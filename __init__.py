@@ -5,7 +5,20 @@ from datetime import datetime
 from urllib.request import urlopen
 import sqlite3
                                                                                                                                        
-app = Flask(__name__)                                                                                                                  
+app = Flask(__name__)
+
+def get_commits():
+    repo = Repo(REPO_PATH)
+    commits = []
+    
+    for commit in repo.iter_commits('main'):  # Remplacez 'main' par la branche que vous souhaitez
+        commits.append({
+            'commit': commit.hexsha,
+            'author': commit.author.name,
+            'date': commit.committed_datetime.isoformat()
+        })
+    
+    return render_template('commits.html')
                                                                                                                                        
 @app.route('/')
 def hello_world():
