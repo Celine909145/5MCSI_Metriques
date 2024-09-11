@@ -12,7 +12,7 @@ def extract_minutes(date_string):
     # Convertir la chaîne en un objet datetime
     date_object = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
     minutes = date_object.minute  # Extraire les minutes
-    return jsonify({'minutes': minutes})
+    return render_template('commits.html') #Comm5
                                                                                                                                        
 @app.route('/')
 def hello_world():
