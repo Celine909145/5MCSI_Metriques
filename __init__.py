@@ -17,7 +17,7 @@ def MaPremiereAPI():
 
 @app.route("/histogramme/")
 def histogramme():
-    return "<h2>Histogramme</h2>"
+    return render_template('histogramme.html')
 
 @app.route('/tawarano/')
 def meteo():
